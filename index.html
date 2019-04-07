@@ -1,0 +1,222 @@
+<html>
+ <head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <style>
+    body{
+      background-color: black;
+    }
+    table, th, td {
+      border: 1px solid white;
+      text-align: center;
+      color: white;
+    }
+    h2{
+      color: white;
+    }
+    p{
+      color: white;
+      text-align: center;
+    }
+    button {
+     width: 100%;
+     height: 20px;
+    }
+    select{
+      display: flex;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+ </head>
+<body>
+  <select id="ddlViewBy">
+    <option value="Normal" onclick="test()">Normal</option>
+    <option value="Lucky" onclick="test1()">Lucky</option>
+  </select>
+  <br/>
+  <table width=100%>
+    <tr>
+      <th>Genera un d4</th>
+      <th>Genera un d6</th>
+      <th>Genera un d8</th>
+      <th>Genera un d10</th>
+      <th>Genera un d100</th>
+      <th>Genera un d12</th>
+      <th>Genera un d20</th>
+    </tr>
+    <tr>
+      <td><button type="button" id="getd4">Roll</button></td>
+      <td><button type="button" id="getd6">Roll</button></td>
+      <td><button type="button" id="getd8">Roll</button></td>
+      <td><button type="button" id="getd10">Roll</button></td>
+      <td><button type="button" id="getd100">Roll</button></td>
+      <td><button type="button" id="getd12">Roll</button></td>
+      <td><button type="button" id="getd20">Roll</button></td>
+    </tr>
+    <tr>
+      <td><h2 id="result4"></h2></td>
+      <td><h2 id="result6"></h2></td>
+      <td><h2 id="result8"></h2></td>
+      <td><h2 id="result10"></h2></td>
+      <td><h2 id="result100"></h2></td>
+      <td><h2 id="result12"></h2></td>
+      <td><h2 id="result20"></h2></td>
+      </tr>
+    </table>
+    <p id="test" style="color: blacksss"></p>
+  <script>
+
+    $(window).on('load', function() {
+      $('#result4').html(0);
+      $('#result6').html(0);
+      $('#result8').html(0);
+      $('#result10').html(0);
+      $('#result100').html(0);
+      $('#result12').html(0);
+      $('#result20').html(0);
+      document.getElementById("test").innerHTML = "Normal";
+    })
+
+    function test(){
+      document.getElementById("test").innerHTML = "Normal";
+    }
+    function test1(){
+      document.getElementById("test").innerHTML = "Lucky";
+    }
+
+    var link4 = document.getElementById('getd4');
+    link4.onclick = getd4;
+
+    function getd4() {
+        var minNumber = 1;
+        var maxNumber = 4;
+        var minLuck = 2;
+        var randomnumber = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+        var randomluck = Math.floor(Math.random() * (maxNumber - minLuck + 1) + minLuck);
+        var getter =  document.getElementById('test').textContent;
+        var str2 = "Normal";
+        var n = getter.toString().localeCompare(str2);
+        if(n == 0){
+          $('#result4').html(randomnumber);
+        }else{
+          $('#result4').html(randomluck);
+        }
+        return false;
+    }
+    var link6 = document.getElementById('getd6');
+    link6.onclick = getd6;
+
+    function getd6() {
+        var minNumber = 1;
+        var maxNumber = 6;
+        var minLuck = 3;
+        var randomnumber = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+        var randomluck = Math.floor(Math.random() * (maxNumber - minLuck + 1) + minLuck);
+        var getter =  document.getElementById('test').textContent;
+        var str2 = "Normal";
+        var n = getter.toString().localeCompare(str2);
+        if(n == 0){
+          $('#result6').html(randomnumber);
+        }else{
+          $('#result6').html(randomluck);
+        }
+        return false;
+    }
+    var link8 = document.getElementById('getd8');
+    link8.onclick = getd8;
+
+    function getd8() {
+        var minNumber = 1;
+        var maxNumber = 8;
+        var minLuck = 4;
+        var randomnumber = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+        var randomluck = Math.floor(Math.random() * (maxNumber - minLuck + 1) + minLuck);
+        var getter =  document.getElementById('test').textContent;
+        var str2 = "Normal";
+        var n = getter.toString().localeCompare(str2);
+        if(n == 0){
+          $('#result8').html(randomnumber);
+        }else{
+          $('#result8').html(randomluck);
+        }
+        return false;
+    }
+    var link10 = document.getElementById('getd10');
+    link10.onclick = getd10;
+
+    function getd10() {
+        var minNumber = 1;
+        var maxNumber = 10;
+        var minLuck = 5;
+        var randomnumber = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+        var randomluck = Math.floor(Math.random() * (maxNumber - minLuck + 1) + minLuck);
+        var getter =  document.getElementById('test').textContent;
+        var str2 = "Normal";
+        var n = getter.toString().localeCompare(str2);
+        if(n == 0){
+          $('#result10').html(randomnumber);
+        }else{
+          $('#result10').html(randomluck);
+        }
+        return false;
+    }
+    var link100 = document.getElementById('getd100');
+    link100.onclick = getd100;
+
+    function getd100() {
+        var minNumber = 1;
+        var maxNumber = 100;
+        var minLuck = 50;
+        var randomnumber = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+        var randomluck = Math.floor(Math.random() * (maxNumber - minLuck + 1) + minLuck);
+        var getter =  document.getElementById('test').textContent;
+        var str2 = "Normal";
+        var n = getter.toString().localeCompare(str2);
+        if(n == 0){
+          $('#result100').html(randomnumber);
+        }else{
+          $('#result100').html(randomluck);
+        }
+        return false;
+    }
+    var link12 = document.getElementById('getd12');
+    link12.onclick = getd12;
+
+    function getd12() {
+        var minNumber = 1;
+        var maxNumber = 12;
+        var minLuck = 6;
+        var randomnumber = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+        var randomluck = Math.floor(Math.random() * (maxNumber - minLuck + 1) + minLuck);
+        var getter =  document.getElementById('test').textContent;
+        var str2 = "Normal";
+        var n = getter.toString().localeCompare(str2);
+        if(n == 0){
+          $('#result12').html(randomnumber);
+        }else{
+          $('#result12').html(randomluck);
+        }
+        return false;
+    }
+    var link20 = document.getElementById('getd20');
+    link20.onclick = getd20;
+
+    function getd20() {
+        var minNumber = 1;
+        var maxNumber = 20;
+        var minLuck = 10;
+        var randomnumber = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+        var randomluck = Math.floor(Math.random() * (maxNumber - minLuck + 1) + minLuck);
+        var getter =  document.getElementById('test').textContent;
+        var str2 = "Normal";
+        var n = getter.toString().localeCompare(str2);
+        if(n == 0){
+          $('#result20').html(randomnumber);
+        }else{
+          $('#result20').html(randomluck);
+        }
+        return false;
+    }
+  </script>
+ </body>
+</html>
